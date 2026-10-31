@@ -1,0 +1,23 @@
+{
+  "name": "backend-servicios",
+  "version": "1.0.0",
+  "description": "backend del pago de condominio",
+  "license": "ISC",
+  "author": "peloncho",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^18.0.9",
+    "express": "^5.3.0"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "nodemon": "^3.1.14"
+  }
+}

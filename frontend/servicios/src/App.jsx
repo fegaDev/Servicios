@@ -46,7 +46,6 @@ function App() {
       name='password'
       fullWidth
     />
-    {formLogin}
     <Button variant="contained"  type='submit'>
       Ingresar
     </Button>
