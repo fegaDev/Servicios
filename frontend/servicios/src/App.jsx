@@ -1,9 +1,11 @@
 import './App.css'
-import { useContext } from 'react'
-import { Context } from './Context/ContextProvider'
+import {Context} from './Context/ContextProvider'
+import { useContext } from 'react';
 import { Box,TextField,Button } from '@mui/material';
 function App() {
-  const {count,handleIncrement} = useContext(Context)
+
+  const {formLogin,handleChangeLogin,handleSubmitForm} = useContext(Context)
+
   return (
     <>
      <Box
@@ -17,7 +19,9 @@ function App() {
 >
   
   <Box
+    
     component="form"
+    onSubmit={handleSubmitForm}
     sx={{
       width: '100%',
       maxWidth: 400,
@@ -31,18 +35,21 @@ function App() {
   >
          <h1 style={{textAlign:'center'}}>Bienvenido App Servicios</h1>
 
-    <TextField label="Usuario" fullWidth />
+    <TextField 
+    label="Usuario" fullWidth name='usuario' value={formLogin.usuario} onChange={handleChangeLogin}/>
 
     <TextField
+    value={formLogin.password}
+    onChange={handleChangeLogin}
       label="Contraseña"
       type="password"
+      name='password'
       fullWidth
     />
-
-    <Button variant="contained" type="submit">
+    {formLogin}
+    <Button variant="contained"  type='submit'>
       Ingresar
     </Button>
-
   </Box>
 </Box>
     </>
