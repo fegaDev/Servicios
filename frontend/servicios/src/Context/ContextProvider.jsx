@@ -11,10 +11,11 @@ export const Context = createContext(null);
 //-- El proveedor solo envuelve los componentes
 export const ContextProvider = ({ children }) => {
 
-    const { formLogin, handleChangeLogin, handleSubmitForm } = useLogin();
+    //Llamamos a la logica de login
+    const login = useLogin();
 
     return (
-        <Context.Provider value={{ formLogin, handleChangeLogin, handleSubmitForm }}>
+        <Context.Provider value={login}>
             {children}
         </Context.Provider>
     )
