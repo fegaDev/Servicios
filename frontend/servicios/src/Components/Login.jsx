@@ -1,36 +1,16 @@
 import {useContext} from 'react'
 import { Context } from '../Context/ContextProvider'
 import { Box, TextField, Button } from '@mui/material';
-import Snackbar from '@mui/material/Snackbar';
-import Alert from '@mui/material/Alert';
+
 
 
 const Login = () => {
 
-    const { formLogin, handleChangeLogin, handleSubmitForm, notificacion, cerrarNotificacion ,cerrarSesion} = useContext(Context);
+    const { formLogin, handleChangeLogin, handleSubmitForm, } = useContext(Context);
 
   return (
      <>
-      <Snackbar
-        open={Boolean(notificacion)}
-        autoHideDuration={4000}
-        onClose={cerrarNotificacion}
-        anchorOrigin={{
-          vertical: 'top',
-          horizontal: 'right'
-        }}
-      >
-        {notificacion && (
-          <Alert
-            onClose={cerrarNotificacion}
-            severity={notificacion.tipo}
-            variant="filled"
-            sx={{ width: '100%' }}
-          >
-            {notificacion.mensaje}
-          </Alert>
-        )}
-      </Snackbar>
+  
 
       <Box
         sx={{
